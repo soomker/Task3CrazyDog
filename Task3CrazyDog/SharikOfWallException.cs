@@ -9,17 +9,11 @@ namespace Task3CrazyDog
 {
     class SharikOfWallException : Exception
     {
-        string historyOfMoving;
-        public string HistoryOfMoving { get { return historyOfMoving; } }
-        public SharikOfWallException(string message) : base(message)
+       
+        public string HistoryOfMoving { get; private set; }
+        public SharikOfWallException(string message, string history) : base(message)
         {
-           StringBuilder stBuild = new StringBuilder();
-           string [] st = File.ReadAllLines("Sharik.log");
-           foreach (string s in st)
-           {
-               stBuild.AppendLine(s);
-           }
-            historyOfMoving = stBuild.ToString();
+            HistoryOfMoving = history;
         }
     }
 }

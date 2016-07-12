@@ -17,6 +17,7 @@ namespace Task3CrazyDog
            //Size of the screen
             Rectangle screenSize = Screen.PrimaryScreen.Bounds;
             CrazyDog dog = new CrazyDog(screenSize.Height, screenSize.Width);
+            dog.StartMoving();
         }
     }
 }
